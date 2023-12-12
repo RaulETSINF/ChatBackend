@@ -1,0 +1,61 @@
+###
+GET http://127.0.0.1:8080/users
+Accept: application/json
+
+###
+POST http://127.0.0.1:8080/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 999,
+  "username": "John",
+  "password": "Smith007",
+  "email": "john.smith@company.com",
+  "registrationDate": "12-10-2023 12:00",
+  "gender": "Male"
+}
+
+
+###
+POST http://127.0.0.1:8080/users
+Content-Type: application/json
+Accept: application/json
+
+{
+"id": 999,
+"username": "Raul",
+"password": "Piqueras2000",
+"email": "raulpiquerasmelero@gmail.com",
+"registrationDate": "12-10-2023 12:00",
+"gender": "Male"
+}
+
+
+###
+POST http://127.0.0.1:8080/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 999,
+  "username": "Pedro",
+  "password": "Cullera12",
+  "email": "pedroSanche@gmail.com",
+  "registrationDate": "12-10-2023 12:00",
+  "gender": "Male"
+}
+
+
+###
+POST http://127.0.0.1:8080/chats
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 999,
+  "user1Id": "1",
+  "user2Id": "3",
+  "lastUpdated": "12-10-2023 12:00"
+}
+
