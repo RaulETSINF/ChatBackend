@@ -1,0 +1,11 @@
+### Crea un chat
+POST http://127.0.0.1:8080/chats
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 999,
+  "user1Id": "1",
+  "user2Id": "3",
+  "lastUpdated": "12-10-2023 12:00"
+}

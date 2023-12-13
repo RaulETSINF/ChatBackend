@@ -19,7 +19,7 @@ class DAOUserImpl : DAOUser {
     )
 
     override suspend fun allUsers(): List<User> = dbQuery {
-        Users.selectAll().map(::resultRowToUser)
+        Users.selectAll().orderBy(Users.id).map(::resultRowToUser)
     }
 
     override suspend fun user(id: Int): User? = dbQuery {

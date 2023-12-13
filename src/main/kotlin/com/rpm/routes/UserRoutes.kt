@@ -42,15 +42,50 @@ fun Route.userRoutes() {
 
         route("/{id?}") {
             get {
+                val userId = call.parameters["id"]?.toIntOrNull() ?: return@get call.respondText(
+                    "Missing user ID",
+                    status = HttpStatusCode.BadRequest
+                )
 
+                val user = userDao.user(userId)
+                if (user != null) {
+                    call.respond(user)
+                } else {
+                    call.respond(HttpStatusCode.NotFound, "User not found")
+                }
             }
             put {
-
+                val userId = call.parameters["id"]?.toIntOrNull() ?: return@put call.respondText(
+                    "Missing user ID",
+                    status = HttpStatusCode.BadRequest
+                )
+                val user = userDao.user(userId)
+                if (user != null){
+                    val updatedEmail = call.receive<Map<String, String>>()["email"]
+                    if (!updatedEmail.isNullOrEmpty()){
+                        if (userDao.editUser(userId, updatedEmail)){
+                            call.respond(HttpStatusCode.OK, "User updated")
+                        } else {
+                            call.respond(HttpStatusCode.NotModified, "User not updated")
+                        }
+                    } else {
+                        call.respond(HttpStatusCode.NotFound, "email not provided")
+                    }
+                } else {
+                    call.respond(HttpStatusCode.NotFound, "User not found")
+                }
             }
             delete {
-
+                val userId = call.parameters["id"]?.toIntOrNull() ?: return@delete call.respondText(
+                    "Missing user ID",
+                    status = HttpStatusCode.BadRequest
+                )
+                if (userDao.deleteUser(userId)){
+                    call.respond(HttpStatusCode.NoContent)
+                } else {
+                    call.respond(HttpStatusCode.NotFound, "User not found")
+                }
             }
-
         }
     }
 }
