@@ -11,8 +11,8 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 fun Application.configureDatabases() {
     val database = Database.connect(
-        url = "jdbc:postgresql://localhost:5432/chat_lab",
-        user = "postgres",
+        url = "jdbc:postgresql://82.223.120.79:5432/chat",
+        user = "raul",
         driver = "org.postgresql.Driver",
         password = "Raulet2000"
     )
