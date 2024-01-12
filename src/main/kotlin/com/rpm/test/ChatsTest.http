@@ -6,6 +6,6 @@ Accept: application/json
 {
   "id": 999,
   "user1Id": "1",
-  "user2Id": "3",
-  "lastUpdated": "12-10-2023 12:00"
+  "user2Id": "4",
+  "lastUpdated": "12-13-2023 12:00"
 }

@@ -17,7 +17,7 @@ Accept: application/json
 
 
 ###Elimina un Usuario
-DELETE http://127.0.0.1:8080/users/6
+DELETE http://127.0.0.1:8080/users/2
 Content-Type: application/json
 Accept: application/json
 
@@ -28,11 +28,11 @@ Accept: application/json
 
 {
   "id": 999,
-  "username": "Maria2",
-  "password": "Sapiñeta",
-  "email": "mariasapi@gmail.com",
+  "username": "Raul",
+  "password": "Piqueras2000",
+  "email": "raulpm@gmail.com",
   "registrationDate": "02-04-2023 14:00",
-  "gender": "Female"
+  "gender": "Male"
 }
 
 

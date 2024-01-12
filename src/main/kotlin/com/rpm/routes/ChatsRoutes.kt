@@ -29,6 +29,7 @@ fun Route.chatsRoutes(){
             } else {
                 call.respondText("Failed to Create a Chat", status = HttpStatusCode.InternalServerError)
             }
+
         }
 
         route("/{id?}"){
@@ -38,7 +39,7 @@ fun Route.chatsRoutes(){
 
         }
 
-        route("/all/user/{id?}"){
+        route("/all/from_user/{id?}"){
             get {
 
             }
