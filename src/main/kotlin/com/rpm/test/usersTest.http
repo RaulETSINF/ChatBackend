@@ -1,5 +1,5 @@
 ###Recuperar Todos los usuarios
-GET http://127.0.0.1:8080/users
+GET http://82.223.120.79:8080/users
 Accept: application/json
 
 ###Recuperar un Usuario en especifico
@@ -22,17 +22,17 @@ Content-Type: application/json
 Accept: application/json
 
 ###Crea un Usuario
-POST http://127.0.0.1:8080/users
+POST http://82.223.120.79:8080/users
 Content-Type: application/json
 Accept: application/json
 
 {
   "id": 999,
-  "username": "Raul",
-  "password": "Piqueras2000",
-  "email": "raulpm@gmail.com",
-  "registrationDate": "02-04-2023 14:00",
-  "gender": "Male"
+  "username": "Helena",
+  "password": "Olivereta2000",
+  "email": "helenaOli@gmail.com",
+  "registrationDate": "12-01-2024 14:00",
+  "gender": "Female"
 }
 
 

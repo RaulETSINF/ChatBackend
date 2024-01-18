@@ -19,8 +19,8 @@ fun Application.configureDatabases() {
 
     transaction(database) {
         SchemaUtils.create(Users)
-        SchemaUtils.create(Chats)
-        SchemaUtils.create(Messages)
+        //SchemaUtils.create(Chats)
+        //SchemaUtils.create(Messages)
     }
 }
 
