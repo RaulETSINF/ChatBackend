@@ -6,6 +6,9 @@ import com.rpm.data.models.Users
 import com.rpm.plugins.dbQuery
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class DAOUserImpl : DAOUser {
 
@@ -32,14 +35,13 @@ class DAOUserImpl : DAOUser {
         username: String,
         password: String,
         email: String,
-        registrationDate: String,
         gender: Gender?
     ): User? = dbQuery {
         val insertedStatement = Users.insert {
             it[Users.username] = username
             it[Users.password] = password
             it[Users.email] = email
-            it[Users.registrationDate] = registrationDate
+            it[registrationDate] = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
             it[Users.gender] = gender
         }
         insertedStatement.resultedValues?.singleOrNull()?.let(::resultRowToUser)

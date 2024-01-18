@@ -30,7 +30,6 @@ fun Route.userRoutes() {
                 username = newUser.username,
                 password = newUser.password,
                 email = newUser.email,
-                registrationDate = newUser.registrationDate,
                 gender = newUser.gender
             )
             if (addedUser != null) {
