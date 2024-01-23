@@ -16,6 +16,7 @@ class DAOUserImpl : DAOUser {
         id = row[Users.id].value,
         username = row[Users.username],
         password = row[Users.password],
+        fullName = row[Users.fullName],
         email = row[Users.email],
         registrationDate = row[Users.registrationDate],
         gender = row[Users.gender]
@@ -34,12 +35,14 @@ class DAOUserImpl : DAOUser {
     override suspend fun addNewUser(
         username: String,
         password: String,
+        fullName: String,
         email: String,
         gender: Gender?
     ): User? = dbQuery {
         val insertedStatement = Users.insert {
             it[Users.username] = username
             it[Users.password] = password
+            it[Users.fullName] = fullName
             it[Users.email] = email
             it[registrationDate] = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))
             it[Users.gender] = gender

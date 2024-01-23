@@ -6,7 +6,7 @@ import com.rpm.data.models.User
 interface DAOUser {
     suspend fun allUsers():List<User>
     suspend fun user(id: Int): User?
-    suspend fun addNewUser(username: String, password: String, email: String, gender: Gender?): User?
+    suspend fun addNewUser(username: String, password: String, fullName: String,email: String, gender: Gender?): User?
     suspend fun editUser(id: Int, email: String): Boolean
     suspend fun deleteUser(id: Int): Boolean
 }
