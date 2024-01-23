@@ -21,16 +21,18 @@ DELETE http://127.0.0.1:8080/users/2
 Content-Type: application/json
 Accept: application/json
 
+
+
 ###Crea un Usuario
 POST http://127.0.0.1:8080/users
 Content-Type: application/json
 Accept: application/json
 
 {
-  "username": "Ivanet115",
-  "password": "IvanPiqueras",
-  "email": "ivanpm2019@gmail.com",
+  "username": "Mariet",
+  "password": "admin",
+  "fullName": "Mario Benedetto",
+  "email": "mario@gmail.com",
   "gender": "Male"
 }
-
 

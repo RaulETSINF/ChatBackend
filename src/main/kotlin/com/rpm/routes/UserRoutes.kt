@@ -29,6 +29,7 @@ fun Route.userRoutes() {
             val addedUser = userDao.addNewUser(
                 username = newUser.username,
                 password = newUser.password,
+                fullName = newUser.fullName,
                 email = newUser.email,
                 gender = newUser.gender
             )

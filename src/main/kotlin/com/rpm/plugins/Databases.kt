@@ -18,7 +18,7 @@ fun Application.configureDatabases() {
     )
 
     transaction(database) {
-        SchemaUtils.create(Users)
+        SchemaUtils.createMissingTablesAndColumns(Users)
         //SchemaUtils.create(Chats)
         //SchemaUtils.create(Messages)
     }
